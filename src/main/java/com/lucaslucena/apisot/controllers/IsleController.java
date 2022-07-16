@@ -22,6 +22,10 @@ public class IsleController {
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public IsleModel createIsle(@RequestBody IsleModel isleModel) throws Exception {
+        isleModel.setName(isleModel.getName().toUpperCase());
+        isleModel.setX_coordinate(isleModel.getX_coordinate().toUpperCase());
+        isleModel.setY_coordinate(isleModel.getY_coordinate().toUpperCase());
+        isleModel.setDescription(isleModel.getDescription().toUpperCase());
         return isleService.createIsle(isleModel);
     }
 
@@ -42,7 +46,7 @@ public class IsleController {
         IsleModel isleModel = new IsleModel();
 
         for (IsleModel i : isleService.findAllIsles()) {
-            if (i.getName().equals(name)) {
+            if (i.getName().toUpperCase().equals(name)) {
                 isleModel = i;
             }
         }
@@ -62,10 +66,14 @@ public class IsleController {
 
     @PutMapping
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void updateIsle(@PathVariable("id") Long id, @RequestBody IsleModel isleModel) {
+    public void updateIsle(@RequestBody IsleModel isleModel) {
         isleService.findIsleById(isleModel.getId())
                 .map(baseIsle -> {
                     modelMapper.map(isleModel, baseIsle);
+                    baseIsle.setName(baseIsle.getName().toUpperCase());
+                    baseIsle.setX_coordinate(baseIsle.getX_coordinate().toUpperCase());
+                    baseIsle.setY_coordinate(baseIsle.getY_coordinate().toUpperCase());
+                    baseIsle.setDescription(baseIsle.getDescription().toUpperCase());
                     isleService.createIsle(baseIsle);
                     return Void.TYPE;
                 }).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Isle not found"));

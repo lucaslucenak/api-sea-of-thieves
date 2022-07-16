@@ -32,7 +32,7 @@ public class IsleModel {
     @Column(name = "yCoordinate")
     private String y_coordinate;
 
-    @Column(name = "name")
+    @Column(name = "name", unique = true)
     private String name;
 
     @Column(name = "description")
