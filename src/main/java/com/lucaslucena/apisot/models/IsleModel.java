@@ -1,5 +1,7 @@
 package com.lucaslucena.apisot.models;
 
+import com.lucaslucena.apisot.enumns.IsleType;
+import com.lucaslucena.apisot.enumns.NeighborhoodEnum;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -11,12 +13,14 @@ import javax.persistence.*;
 @Setter
 public class IsleModel {
 
-    public IsleModel(Long id, String x_coordinate, String y_coordinate, String name, String description) {
+    public IsleModel(Long id, String x_coordinate, String y_coordinate, String name, String description, IsleType isleType, NeighborhoodEnum neighborhoodEnum) {
         Id = id;
         this.x_coordinate = x_coordinate;
         this.y_coordinate = y_coordinate;
         this.name = name;
         this.description = description;
+        this.isleType = isleType;
+        this.neighborhoodEnum = neighborhoodEnum;
     }
 
     public IsleModel() {
@@ -37,4 +41,10 @@ public class IsleModel {
 
     @Column(name = "description")
     private String description;
+
+    @Column(name= "type")
+    private IsleType isleType;
+
+    @Column(name="neighborhood")
+    private NeighborhoodEnum neighborhoodEnum;
 }
