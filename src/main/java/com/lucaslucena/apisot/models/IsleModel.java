@@ -11,6 +11,17 @@ import javax.persistence.*;
 @Setter
 public class IsleModel {
 
+    public IsleModel(Long id, String x_coordinate, String y_coordinate, String name, String description) {
+        Id = id;
+        this.x_coordinate = x_coordinate;
+        this.y_coordinate = y_coordinate;
+        this.name = name;
+        this.description = description;
+    }
+
+    public IsleModel() {
+    }
+
     @javax.persistence.Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long Id;

@@ -37,6 +37,19 @@ public class IsleController {
                 .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Isle not found"));
     }
 
+    @GetMapping("/findByName/{name}")
+    public IsleModel findIsleByName(@PathVariable("name") String name) {
+        IsleModel isleModel = new IsleModel();
+
+        for (IsleModel i : isleService.findAllIsles()) {
+            if (i.getName().equals(name)) {
+                isleModel = i;
+            }
+        }
+        return isleService.findIsleById(isleModel.getId())
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Isle not found"));
+    }
+
     @DeleteMapping("{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void deleteIsleById(@PathVariable("id") Long id) {
