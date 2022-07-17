@@ -2,6 +2,29 @@
 
 API para consumo referente às ilhas do Sea of Thieves e suas respectivas coordenadas
 
+## Entities
+
+### Isle
+
+```json
+{
+    "x_coordinate": "E",
+    "y_coordinate": "17",
+    "name": "Nome da Ilha",
+    "description": "Descrição da Ilha",
+    "id_neighborhood": 1 //Id da região da ilha
+}
+```
+
+### Neighborhood
+
+```json
+{
+    "name": "Nome da vizinhança",
+    "description": "Descrição da vizinhança"
+}
+```
+
 ## Main Route
 
 Através de protocolos HTTP, utilize a seguinte rota principal:
@@ -10,7 +33,7 @@ Através de protocolos HTTP, utilize a seguinte rota principal:
 https://api-sot.herokuapp.com/isles/
 ```
 
-## Usage
+## Isles Usage
 
 ### Get All Isles (GET)
 
@@ -27,7 +50,7 @@ https://api-sot.herokuapp.com/isles/{id}
 ### Get Isle By Name (GET)
 
 ```javascript
-https://api-sot.herokuapp.com/isles/{name}
+https://api-sot.herokuapp.com/isles/findByName/{name}
 ```
 
 ### Post New Isle (POST)
@@ -46,6 +69,38 @@ https://api-sot.herokuapp.com/isles/{id}
 
 ```javascript
 https://api-sot.herokuapp.com/isles/
+```
+
+## Neighborhoods Usage
+
+### Get All Neighborhoods (GET)
+
+```javascript
+https://api-sot.herokuapp.com/neighborhoods/
+```
+
+### Get Isle By Id (GET)
+
+```javascript
+https://api-sot.herokuapp.com/neighborhoods/{id}
+```
+
+### Post New Isle (POST)
+
+```javascript
+https://api-sot.herokuapp.com/neighborhoods/
+```
+
+### Delete Isle (DELETE)
+
+```javascript
+https://api-sot.herokuapp.com/neighborhoods/{id}
+```
+
+### Updade Isle (PUT)
+
+```javascript
+https://api-sot.herokuapp.com/neighborhoods/
 ```
 
 ## Contributing
