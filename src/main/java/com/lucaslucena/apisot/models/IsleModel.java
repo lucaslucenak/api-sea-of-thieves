@@ -40,7 +40,6 @@ public class IsleModel {
     @Column(name = "description")
     private String description;
 
-    @Column(name = "neighborhood")
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "id_neighborhood")
     private NeighborhoodModel neighborhood;
