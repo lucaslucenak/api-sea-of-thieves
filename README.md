@@ -10,7 +10,7 @@ Através de protocolos HTTP, utilize a seguinte rota principal:
 https://api-sot.herokuapp.com/isles/
 ```
 
-## Usage
+## Isles Usage
 
 ### Get All Isles (GET)
 
@@ -27,7 +27,7 @@ https://api-sot.herokuapp.com/isles/{id}
 ### Get Isle By Name (GET)
 
 ```javascript
-https://api-sot.herokuapp.com/isles/{name}
+https://api-sot.herokuapp.com/isles/findByName/{name}
 ```
 
 ### Post New Isle (POST)
@@ -46,6 +46,38 @@ https://api-sot.herokuapp.com/isles/{id}
 
 ```javascript
 https://api-sot.herokuapp.com/isles/
+```
+
+## Neighborhoods Usage
+
+### Get All Neighborhoods (GET)
+
+```javascript
+https://api-sot.herokuapp.com/neighborhoods/
+```
+
+### Get Isle By Id (GET)
+
+```javascript
+https://api-sot.herokuapp.com/neighborhoods/{id}
+```
+
+### Post New Isle (POST)
+
+```javascript
+https://api-sot.herokuapp.com/neighborhoods/
+```
+
+### Delete Isle (DELETE)
+
+```javascript
+https://api-sot.herokuapp.com/neighborhoods/{id}
+```
+
+### Updade Isle (PUT)
+
+```javascript
+https://api-sot.herokuapp.com/neighborhoods/
 ```
 
 ## Contributing
