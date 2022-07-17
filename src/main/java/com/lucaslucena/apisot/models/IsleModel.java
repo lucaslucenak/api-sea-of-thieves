@@ -42,7 +42,7 @@ public class IsleModel {
 
     @Column(name = "neighborhood")
     @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "id_neighborhood", referencedColumnName = "id")
+    @JoinColumn(name = "id_neighborhood")
     private NeighborhoodModel neighborhood;
 
 //    @Column(name="neighborhood")
