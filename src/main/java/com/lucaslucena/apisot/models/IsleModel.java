@@ -13,14 +13,12 @@ import javax.persistence.*;
 @Setter
 public class IsleModel {
 
-    public IsleModel(Long id, String x_coordinate, String y_coordinate, String name, String description, IsleType isleType, NeighborhoodEnum neighborhoodEnum) {
+    public IsleModel(Long id, String x_coordinate, String y_coordinate, String name, String description) {
         Id = id;
         this.x_coordinate = x_coordinate;
         this.y_coordinate = y_coordinate;
         this.name = name;
         this.description = description;
-        this.isleType = isleType;
-        this.neighborhoodEnum = neighborhoodEnum;
     }
 
     public IsleModel() {
@@ -42,9 +40,11 @@ public class IsleModel {
     @Column(name = "description")
     private String description;
 
-    @Column(name= "type")
-    private IsleType isleType;
+    @Column(name = "neighborhood")
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "id_neighborhood", referencedColumnName = "id")
+    private NeighborhoodModel neighborhood;
 
-    @Column(name="neighborhood")
-    private NeighborhoodEnum neighborhoodEnum;
+//    @Column(name="neighborhood")
+//    private NeighborhoodEnum neighborhoodEnum;
 }
