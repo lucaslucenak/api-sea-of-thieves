@@ -13,12 +13,13 @@ import javax.persistence.*;
 @Setter
 public class IsleModel {
 
-    public IsleModel(Long id, String x_coordinate, String y_coordinate, String name, String description) {
+    public IsleModel(Long id, String x_coordinate, String y_coordinate, String name, String description, NeighborhoodModel neighborhood) {
         Id = id;
         this.x_coordinate = x_coordinate;
         this.y_coordinate = y_coordinate;
         this.name = name;
         this.description = description;
+        this.neighborhood = neighborhood;
     }
 
     public IsleModel() {
@@ -41,7 +42,7 @@ public class IsleModel {
     private String description;
 
     @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "id_neighborhood")
+    @JoinColumn(name = "id_neighborhood", referencedColumnName = "id")
     private NeighborhoodModel neighborhood;
 
 
