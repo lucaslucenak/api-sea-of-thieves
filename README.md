@@ -2,6 +2,29 @@
 
 API para consumo referente às ilhas do Sea of Thieves e suas respectivas coordenadas
 
+## Entities
+
+### Isle
+
+```json
+{
+    "x_coordinate": "E",
+    "y_coordinate": "17",
+    "name": "Nome da Ilha",
+    "description": "Descrição da Ilha",
+    "id_neighborhood": 1 //Id da região da ilha
+}
+```
+
+### Neighborhood
+
+```json
+{
+    "name": "Nome da vizinhança",
+    "description": "Descrição da vizinhança"
+}
+```
+
 ## Main Route
 
 Através de protocolos HTTP, utilize a seguinte rota principal:
