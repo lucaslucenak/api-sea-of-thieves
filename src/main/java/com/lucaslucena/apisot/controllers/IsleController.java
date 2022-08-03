@@ -5,6 +5,7 @@ import com.lucaslucena.apisot.services.IsleService;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 
@@ -19,6 +20,7 @@ public class IsleController {
     @Autowired
     private ModelMapper modelMapper;
 
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public IsleModel createIsle(@RequestBody IsleModel isleModel) throws Exception {
@@ -29,18 +31,21 @@ public class IsleController {
         return isleService.createIsle(isleModel);
     }
 
+    @PreAuthorize("hasAnyRole('ROLE_USER', 'ROLE_ADMIN')")
     @GetMapping
     @ResponseStatus(HttpStatus.OK)
     public List<IsleModel> findAllIsles() {
         return isleService.findAllIsles();
     }
 
+    @PreAuthorize("hasAnyRole('ROLE_USER', 'ROLE_ADMIN')")
     @GetMapping("{id}")
     public IsleModel findIsleById(@PathVariable("id") Long id) {
         return isleService.findIsleById(id)
                 .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Isle not found"));
     }
 
+    @PreAuthorize("hasAnyRole('ROLE_USER', 'ROLE_ADMIN')")
     @GetMapping("/findByName/{name}")
     public IsleModel findIsleByName(@PathVariable("name") String name) {
         IsleModel isleModel = new IsleModel();
@@ -54,6 +59,7 @@ public class IsleController {
                 .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Isle not found"));
     }
 
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
     @DeleteMapping("{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void deleteIsleById(@PathVariable("id") Long id) {
@@ -64,6 +70,7 @@ public class IsleController {
                 }).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Isle not found"));
     }
 
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
     @PutMapping
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void updateIsle(@RequestBody IsleModel isleModel) {
