@@ -9,6 +9,7 @@ import javax.persistence.*;
 import java.io.Serial;
 import java.io.Serializable;
 import java.util.Collection;
+import java.util.List;
 
 @Entity
 @Table(name = "tb_user")
@@ -29,9 +30,15 @@ public class UserModel implements UserDetails, Serializable {
     @Column
     private String password;
 
+    @ManyToMany
+    @JoinTable(name = "user_has_role",
+            joinColumns = @JoinColumn(name = "id_user"),
+            inverseJoinColumns = @JoinColumn(name = "id_role"))
+    private List<RoleModel> roles;
+
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        return null;
+        return roles;
     }
 
     @Override
