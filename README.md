@@ -2,6 +2,13 @@
 
 API para consumo referente às ilhas do Sea of Thieves e suas respectivas coordenadas
 
+## Auth
+Para fazer o consumo da API é necessário realizar uma  autenticação "Basic Auth", com as seguintes credenciais:
+```bash
+Username: user
+Password: 123456
+```
+
 ## Entities
 
 ### Isle
