@@ -51,7 +51,7 @@ public class IsleController {
         IsleModel isleModel = new IsleModel();
 
         for (IsleModel i : isleService.findAllIsles()) {
-            if (i.getName().toUpperCase().equals(name)) {
+            if (i.getName().equalsIgnoreCase(name)) {
                 isleModel = i;
             }
         }
