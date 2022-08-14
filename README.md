@@ -7,7 +7,7 @@ There's a really cool game that I usually play with my friends, "Sea of Thieves"
 I developed an API with Spring Boot to fulfill this function! There we can map all the game islands, associating their names with their coordinates, perfect isn't it?! The deployment of the application and the PostgreSQL database was done entirely on Heroku so that any of my friends can also use it.
 
 ## Auth
-Para fazer o consumo da API é necessário realizar uma  autenticação "Basic Auth", com as seguintes credenciais:
+To make requests to the API the "Basic Auth" is necessary:
 ```bash
 Username: user
 Password: 123456
@@ -25,23 +25,6 @@ Password: 123456
     "description": "Descrição da Ilha",
     "id_neighborhood": 1 //Id da região da ilha
 }
-```
-
-### Neighborhood
-
-```json
-{
-    "name": "Nome da vizinhança",
-    "description": "Descrição da vizinhança"
-}
-```
-
-## Main Route
-
-Através de protocolos HTTP, utilize a seguinte rota principal:
-
-```bash
-https://api-sot.herokuapp.com/isles/
 ```
 
 ## Isles Usage
