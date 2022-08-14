@@ -82,38 +82,6 @@ https://api-sot.herokuapp.com/isles/{id}
 https://api-sot.herokuapp.com/isles/
 ```
 
-## Neighborhoods Usage
-
-### Get All Neighborhoods (GET)
-
-```javascript
-https://api-sot.herokuapp.com/neighborhoods/
-```
-
-### Get Isle By Id (GET)
-
-```javascript
-https://api-sot.herokuapp.com/neighborhoods/{id}
-```
-
-### Post New Isle (POST)
-
-```javascript
-https://api-sot.herokuapp.com/neighborhoods/
-```
-
-### Delete Isle (DELETE)
-
-```javascript
-https://api-sot.herokuapp.com/neighborhoods/{id}
-```
-
-### Updade Isle (PUT)
-
-```javascript
-https://api-sot.herokuapp.com/neighborhoods/
-```
-
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
