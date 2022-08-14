@@ -1,5 +1,7 @@
 # Sea Of Thieves API
 
+![Sea Of Thieves](https://www.arenaxbox.com.br/wp-content/uploads/2022/06/sea-of-thieves-7-temporada.jpg)
+
 There's a really cool game that I usually play with my friends, "Sea of Thieves", in this game we have a map with several islands scattered around, but when we need to find a specific island we spend some time looking for it, which can end up taking a while. So I had the idea to solve our problem, after all, programming exists to help us, right?
 
 I developed an API with Spring Boot to fulfill this function! There we can map all the game islands, associating their names with their coordinates, perfect isn't it?! The deployment of the application and the PostgreSQL database was done entirely on Heroku so that any of my friends can also use it.
