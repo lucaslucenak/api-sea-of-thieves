@@ -13,6 +13,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/isles")
+//@CrossOrigin(origins = "http://192.168.15.10:3000", maxAge = 3600)
 public class IsleController {
 
     @Autowired

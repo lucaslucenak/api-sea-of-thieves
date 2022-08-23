@@ -25,6 +25,8 @@ public class WebSecurityConfig {
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity httpSecurity) throws Exception {
         httpSecurity
+                .cors()
+                .and()
                 .httpBasic()
                 .and()
                 .authorizeHttpRequests()

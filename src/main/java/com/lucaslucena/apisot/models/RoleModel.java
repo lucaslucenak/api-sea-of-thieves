@@ -1,6 +1,6 @@
 package com.lucaslucena.apisot.models;
 
-import com.lucaslucena.apisot.enumns.RoleName;
+//import com.lucaslucena.apisot.enumns.RoleName;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.security.core.GrantedAuthority;
@@ -22,13 +22,13 @@ public class RoleModel implements Serializable, GrantedAuthority {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Enumerated(EnumType.STRING)
+//    @Enumerated(EnumType.STRING)
     @Column(unique = true)
-    private RoleName roleName;
+    private String role_name;
 
     @Override
     public String getAuthority() {
-        return roleName.toString();
+        return role_name;
     }
 }
 
